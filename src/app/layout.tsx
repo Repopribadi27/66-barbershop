@@ -96,9 +96,9 @@ export default function RootLayout({
                 <Phone className="w-3.5 h-3.5 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
                 <span className="text-[10px] uppercase tracking-widest font-bold">085855634650</span>
               </a>
-              <a href="https://instagram.com/66_BARBERR" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-white/40 hover:text-white transition-all duration-500 hover:-translate-y-0.5 group">
+              <a href="https://instagram.com/66_BARBERRR" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-white/40 hover:text-white transition-all duration-500 hover:-translate-y-0.5 group">
                 <InstagramIcon className="w-3.5 h-3.5 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
-                <span className="text-[10px] uppercase tracking-widest font-bold">@66_BARBERR</span>
+                <span className="text-[10px] uppercase tracking-widest font-bold">@66_BARBERRR</span>
               </a>
               <a href="https://tiktok.com/@66_barberr" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-white/40 hover:text-white transition-all duration-500 hover:-translate-y-0.5 group">
                 <TiktokIcon className="w-3.5 h-3.5 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
