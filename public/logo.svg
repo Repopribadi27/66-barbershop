@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="100%" height="100%">
+  <defs>
+    <!-- Perfect Route 66 Shield Path -->
+    <path id="shield" d="M 100,20 C 115,20 135,35 170,45 C 150,70 150,105 160,135 C 170,165 135,200 100,220 C 65,200 30,165 40,135 C 50,105 50,70 30,45 C 65,35 85,20 100,20 Z" />
+  </defs>
+  
+  <!-- Outer Shield -->
+  <use href="#shield" fill="none" stroke="white" stroke-width="4.5" stroke-linejoin="round" />
+  
+  <!-- Inner Content Scaled Down -->
+  <g transform="translate(100, 115) scale(0.88) translate(-100, -115)">
+    <!-- Inner Shield Border -->
+    <use href="#shield" fill="none" stroke="white" stroke-width="5.5" stroke-linejoin="round" />
+    
+    <!-- Clip Path for the Horizontal Line -->
+    <clipPath id="innerClip">
+      <use href="#shield" />
+    </clipPath>
+    
+    <!-- Horizontal Divider -->
+    <line x1="0" y1="85" x2="200" y2="85" stroke="white" stroke-width="5.5" clip-path="url(#innerClip)" />
+    
+    <!-- BARBERSHOP Text -->
+    <!-- Scaled to be tall and narrow just like the original image -->
+    <g transform="translate(100, 73) scale(0.75, 1.6) translate(-100, -73)">
+      <text x="100" y="73" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900" fill="white" text-anchor="middle" letter-spacing="0">BARBERSHOP</text>
+    </g>
+    
+    <!-- 66 Text -->
+    <!-- Scaled slightly for perfect fit -->
+    <g transform="translate(100, 195) scale(0.95, 1.05) translate(-100, -195)">
+      <text x="100" y="195" font-family="Arial, Helvetica, sans-serif" font-size="115" font-weight="900" fill="white" text-anchor="middle" letter-spacing="-5">66</text>
+    </g>
+  </g>
+</svg>
