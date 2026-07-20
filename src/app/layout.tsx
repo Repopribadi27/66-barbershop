@@ -2,8 +2,22 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
-import { MapPin, Phone, Camera, Smartphone } from "lucide-react";
+import { MapPin, Phone } from "lucide-react";
 import Link from "next/link";
+
+const InstagramIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+  </svg>
+);
+
+const TiktokIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+  </svg>
+);
 import { Toaster } from 'sonner';
 
 const poppins = Poppins({
@@ -90,11 +104,11 @@ export default function RootLayout({
                 <span className="text-[10px] uppercase tracking-widest font-bold">085855634650</span>
               </a>
               <a href="https://instagram.com/66_BARBERR" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-white/40 hover:text-white transition-all duration-500 hover:-translate-y-0.5 group">
-                <Camera className="w-3.5 h-3.5 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
+                <InstagramIcon className="w-3.5 h-3.5 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
                 <span className="text-[10px] uppercase tracking-widest font-bold">@66_BARBERR</span>
               </a>
               <a href="https://tiktok.com/@66_barberr" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-white/40 hover:text-white transition-all duration-500 hover:-translate-y-0.5 group">
-                <Smartphone className="w-3.5 h-3.5 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
+                <TiktokIcon className="w-3.5 h-3.5 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
                 <span className="text-[10px] uppercase tracking-widest font-bold">@66_barberr</span>
               </a>
             </div>
