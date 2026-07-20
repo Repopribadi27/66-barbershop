@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
-import { MapPin, Phone, Camera } from "lucide-react";
+import { MapPin, Phone, Camera, Smartphone } from "lucide-react";
 import Link from "next/link";
 import { Toaster } from 'sonner';
 
@@ -39,13 +39,13 @@ export default function RootLayout({
         {/* Dot Grid Overlay */}
         <div className="fixed inset-0 dot-grid pointer-events-none z-0" />
 
-        {/* Ambient Orbs — stronger */}
-        <div className="fixed top-[-15%] right-[-5%] w-[700px] h-[700px] rounded-full pointer-events-none z-0"
-          style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%)' }} />
-        <div className="fixed bottom-[-15%] left-[-5%] w-[600px] h-[600px] rounded-full pointer-events-none z-0"
-          style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%)' }} />
-        <div className="fixed top-[40%] left-[50%] translate-x-[-50%] w-[800px] h-[400px] rounded-full pointer-events-none z-0"
-          style={{ background: 'radial-gradient(ellipse, rgba(255,255,255,0.015) 0%, transparent 70%)' }} />
+        {/* Ambient Orbs — ultra premium subtle glow */}
+        <div className="fixed top-[-10%] right-[-5%] w-[800px] h-[800px] rounded-full pointer-events-none z-0 mix-blend-screen"
+          style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 60%)' }} />
+        <div className="fixed bottom-[-10%] left-[-10%] w-[700px] h-[700px] rounded-full pointer-events-none z-0 mix-blend-screen"
+          style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.02) 0%, transparent 60%)' }} />
+        <div className="fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[1000px] h-[600px] rounded-full pointer-events-none z-0 mix-blend-screen"
+          style={{ background: 'radial-gradient(ellipse, rgba(255,255,255,0.01) 0%, transparent 70%)' }} />
 
         {/* Header */}
         <header className="sticky top-0 z-50 glass-strong">
@@ -80,18 +80,22 @@ export default function RootLayout({
               <Image src="/logo.png" alt="66 Barbershop" fill className="object-contain" />
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mb-6">
-              <a href="#" className="flex items-center gap-2 text-white/40 hover:text-white transition-colors duration-300">
-                <MapPin className="w-3.5 h-3.5" />
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4 mb-6">
+              <a href="#" className="flex items-center gap-2 text-white/40 hover:text-white transition-all duration-500 hover:-translate-y-0.5 group">
+                <MapPin className="w-3.5 h-3.5 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
                 <span className="text-[10px] uppercase tracking-widest font-bold">Bojonegoro, Jatim</span>
               </a>
-              <a href="#" className="flex items-center gap-2 text-white/40 hover:text-white transition-colors duration-300">
-                <Phone className="w-3.5 h-3.5" />
-                <span className="text-[10px] uppercase tracking-widest font-bold">+62 812-3456-7890</span>
+              <a href="https://wa.me/6285855634650" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-white/40 hover:text-white transition-all duration-500 hover:-translate-y-0.5 group">
+                <Phone className="w-3.5 h-3.5 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
+                <span className="text-[10px] uppercase tracking-widest font-bold">085855634650</span>
               </a>
-              <a href="#" className="flex items-center gap-2 text-white/40 hover:text-white transition-colors duration-300">
-                <Camera className="w-3.5 h-3.5" />
-                <span className="text-[10px] uppercase tracking-widest font-bold">@66barbershop</span>
+              <a href="https://instagram.com/66_BARBERR" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-white/40 hover:text-white transition-all duration-500 hover:-translate-y-0.5 group">
+                <Camera className="w-3.5 h-3.5 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
+                <span className="text-[10px] uppercase tracking-widest font-bold">@66_BARBERR</span>
+              </a>
+              <a href="https://tiktok.com/@66_barberr" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-white/40 hover:text-white transition-all duration-500 hover:-translate-y-0.5 group">
+                <Smartphone className="w-3.5 h-3.5 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
+                <span className="text-[10px] uppercase tracking-widest font-bold">@66_barberr</span>
               </a>
             </div>
 
