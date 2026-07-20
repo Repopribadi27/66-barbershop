@@ -37,8 +37,8 @@ export default function Home() {
         {/* Main Card */}
         <div className="gradient-border rounded-[2rem] p-8 sm:p-10 hover-lift relative overflow-hidden bg-[#0A0A0A]/40 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
           {/* Top accent line */}
-          <div className="absolute top-0 left-[15%] right-[15%] h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent" />
-          <div className="absolute top-0 left-[25%] right-[25%] h-[2px] bg-gradient-to-r from-transparent via-white/80 to-transparent blur-sm" />
+          <div className="absolute top-0 left-[15%] right-[15%] h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/50 to-transparent" />
+          <div className="absolute top-0 left-[25%] right-[25%] h-[2px] bg-gradient-to-r from-transparent via-[#FFDF73]/80 to-transparent blur-sm" />
 
           {/* Corner accents */}
           <div className="absolute top-4 right-4 flex gap-1 opacity-20">
@@ -51,9 +51,10 @@ export default function Home() {
           </div>
 
           {/* Logo/Icon */}
-          <div className="flex justify-center mb-8">
-            <div className="w-16 h-16 rounded-2xl gradient-border flex items-center justify-center bg-gradient-to-br from-white/10 to-white/[0.02]">
-              <Scissors className="w-7 h-7 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]" />
+          <div className="flex justify-center mb-8 relative">
+            <div className="absolute inset-0 bg-[#D4AF37]/20 blur-2xl rounded-full" />
+            <div className="w-16 h-16 rounded-2xl border border-[#D4AF37]/30 flex items-center justify-center bg-gradient-to-br from-[#1A1A1A] to-[#0A0A0A] relative z-10 shadow-[0_4px_20px_rgba(212,175,55,0.2)]">
+              <Scissors className="w-7 h-7 text-[#D4AF37] drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]" />
             </div>
           </div>
 
@@ -68,9 +69,9 @@ export default function Home() {
           </div>
 
           {/* Decorative dot row */}
-          <div className="flex justify-center gap-1 mb-6 opacity-15">
+          <div className="flex justify-center gap-1 mb-6 opacity-20">
             {[...Array(15)].map((_, i) => (
-              <div key={i} className="w-1 h-1 rounded-full bg-white" />
+              <div key={i} className="w-1 h-1 rounded-full bg-[#D4AF37]" />
             ))}
           </div>
 
@@ -97,7 +98,7 @@ export default function Home() {
             <Button
               type="submit"
               disabled={isLoading}
-              className="w-full relative group overflow-hidden bg-white text-[#050505] hover:bg-white/90 border-none rounded-xl py-6 font-extrabold text-[13px] uppercase tracking-[0.25em] transition-all duration-500 shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:-translate-y-0.5 flex items-center justify-center gap-2"
+              className="w-full relative group overflow-hidden bg-gradient-to-r from-[#D4AF37] to-[#FFDF73] text-[#050505] hover:from-[#FFDF73] hover:to-[#D4AF37] border-none rounded-xl py-6 font-extrabold text-[13px] uppercase tracking-[0.25em] transition-all duration-500 shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] hover:-translate-y-0.5 flex items-center justify-center gap-2"
               suppressHydrationWarning
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:animate-shimmer" />
@@ -121,7 +122,7 @@ export default function Home() {
               <div className="h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent mb-8" />
 
               <div className="text-center mb-8">
-                <p className="text-[10px] text-white/40 font-bold uppercase tracking-[0.3em] mb-1.5">Member</p>
+                <p className="text-[10px] text-[#D4AF37]/70 font-bold uppercase tracking-[0.3em] mb-1.5">Member</p>
                 <h2 className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 drop-shadow-[0_0_12px_rgba(255,255,255,0.2)]">
                   {member.name}
                 </h2>
@@ -145,8 +146,8 @@ export default function Home() {
                       key={i}
                       className={`w-2 h-2 rounded-full transition-all duration-500 ${
                         i < member.totalPoints
-                          ? 'bg-white shadow-[0_0_6px_rgba(255,255,255,0.6)] scale-110'
-                          : 'bg-white/[0.06] shadow-inner'
+                          ? 'bg-gradient-to-br from-[#FFDF73] to-[#D4AF37] shadow-[0_0_8px_rgba(212,175,55,0.6)] scale-110'
+                          : 'bg-white/[0.04] shadow-inner'
                       }`}
                       style={{ transitionDelay: `${i * 15}ms` }}
                     />
@@ -162,10 +163,11 @@ export default function Home() {
 
               {/* Reward */}
               {member.totalPoints >= 50 && (
-                <div className="mt-4 gradient-border rounded-2xl p-6 text-center bg-gradient-to-br from-white/10 to-white/[0.03]">
-                  <Gift className="w-8 h-8 text-white mx-auto mb-3 drop-shadow-[0_0_12px_rgba(255,255,255,0.3)]" />
-                  <p className="text-base font-black text-white">Free Haircut!</p>
-                  <p className="text-[10px] text-white/30 font-semibold mt-1">Tunjukkan layar ini ke kasir</p>
+                <div className="mt-4 border border-[#D4AF37]/30 rounded-2xl p-6 text-center bg-gradient-to-br from-[#D4AF37]/10 to-transparent relative overflow-hidden">
+                  <div className="absolute inset-0 bg-[#D4AF37]/5 blur-3xl animate-pulse-slow" />
+                  <Gift className="w-8 h-8 text-[#FFDF73] mx-auto mb-3 drop-shadow-[0_0_15px_rgba(212,175,55,0.5)] relative z-10" />
+                  <p className="text-base font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FFDF73] to-[#D4AF37] relative z-10">Free Haircut!</p>
+                  <p className="text-[10px] text-[#D4AF37]/60 font-semibold mt-1 relative z-10">Tunjukkan layar ini ke kasir</p>
                 </div>
               )}
             </div>
