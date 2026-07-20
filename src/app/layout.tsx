@@ -42,22 +42,15 @@ export default function RootLayout({
       className={`${poppins.variable} h-full antialiased dark`}
       suppressHydrationWarning
     >
-      <body
-        className="min-h-full flex flex-col text-white relative overflow-x-hidden"
-        style={{
-          fontFamily: 'var(--font-poppins), Poppins, sans-serif',
-          background: 'linear-gradient(160deg, #080808 0%, #151515 30%, #0e0e0e 60%, #121212 100%)',
-        }}
-        suppressHydrationWarning
-      >
-        {/* Dot Grid Overlay */}
-        <div className="fixed inset-0 dot-grid pointer-events-none z-0" />
+      <body className={`${poppins.variable} font-sans antialiased bg-brushed-metal text-white min-h-screen flex flex-col relative selection:bg-[#D4AF37]/30 selection:text-white overflow-x-hidden`} suppressHydrationWarning>
+        {/* Dynamic ambient lights */}
+        <div className="fixed inset-0 dot-grid pointer-events-none z-0 opacity-40 mix-blend-overlay" />
 
-        {/* Ambient Orbs — ultra premium subtle glow */}
-        <div className="fixed top-[-10%] right-[-5%] w-[800px] h-[800px] rounded-full pointer-events-none z-0 mix-blend-screen"
-          style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 60%)' }} />
-        <div className="fixed bottom-[-10%] left-[-10%] w-[700px] h-[700px] rounded-full pointer-events-none z-0 mix-blend-screen"
-          style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.02) 0%, transparent 60%)' }} />
+        {/* Ambient Orbs — ultra premium subtle glow with burgundy/gold mix */}
+        <div className="fixed top-[-10%] right-[-5%] w-[800px] h-[800px] rounded-full pointer-events-none z-0 mix-blend-screen animate-pulse-slow"
+          style={{ background: 'radial-gradient(circle, rgba(212,175,55,0.04) 0%, transparent 60%)' }} />
+        <div className="fixed bottom-[-10%] left-[-10%] w-[700px] h-[700px] rounded-full pointer-events-none z-0 mix-blend-screen animate-pulse-slow"
+          style={{ background: 'radial-gradient(circle, rgba(128,0,32,0.06) 0%, transparent 60%)', animationDelay: '2s' }} />
         <div className="fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[1000px] h-[600px] rounded-full pointer-events-none z-0 mix-blend-screen"
           style={{ background: 'radial-gradient(ellipse, rgba(255,255,255,0.01) 0%, transparent 70%)' }} />
 

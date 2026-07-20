@@ -48,6 +48,7 @@
   --radius-4xl: calc(var(--radius) * 2.6);
   --animate-shimmer: shimmer 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-float: float 6s ease-in-out infinite;
 }
 
 @keyframes shimmer {
@@ -59,6 +60,12 @@
 @keyframes pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: .5; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
 }
 
 :root {
@@ -132,35 +139,44 @@
   }
 }
 
-/* ===== 66 BARBERSHOP — PREMIUM GOLD & OBSIDIAN ===== */
+/* ===== 66 BARBERSHOP — PREMIUM GOLD, BURGUNDY & BRUSHED BLACK ===== */
+
+/* Brushed Metal Background */
+.bg-brushed-metal {
+  background: 
+    linear-gradient(105deg, rgba(26,26,26,0.95) 0%, rgba(10,10,10,0.98) 100%),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.01) 1px, transparent 1px, transparent 2px),
+    repeating-linear-gradient(0deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.1) 1px, transparent 1px, transparent 4px);
+  background-size: 100% 100%, 4px 4px, 4px 4px;
+}
 
 /* Glass Cards */
 .glass {
-  background: linear-gradient(135deg, rgba(20,20,20,0.7) 0%, rgba(10,10,10,0.8) 100%);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(212, 175, 55, 0.15); /* Subtle Gold border */
-  box-shadow: 0 8px 32px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05);
+  background: linear-gradient(135deg, rgba(30,30,30,0.6) 0%, rgba(15,15,15,0.8) 100%);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid rgba(212, 175, 55, 0.15); /* Polished Brass */
+  box-shadow: 0 10px 40px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.03);
 }
 
 .glass-strong {
-  background: linear-gradient(135deg, rgba(15,15,15,0.85) 0%, rgba(5,5,5,0.95) 100%);
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
-  border: 1px solid rgba(212, 175, 55, 0.2);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.8), inset 0 1px 0 rgba(212, 175, 55, 0.1);
+  background: linear-gradient(135deg, rgba(20,20,20,0.8) 0%, rgba(5,5,5,0.95) 100%);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(128, 0, 32, 0.3); /* Deep Burgundy Accent */
+  box-shadow: 0 12px 50px rgba(0,0,0,0.9), inset 0 1px 0 rgba(212, 175, 55, 0.1);
 }
 
 .glass-input {
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(212, 175, 55, 0.2);
-  transition: all 0.35s ease;
+  background: rgba(10,10,10,0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(128, 0, 32, 0.2); /* Burgundy */
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .glass-input:focus {
-  background: rgba(20,20,20,0.6);
-  border-color: rgba(212, 175, 55, 0.5);
-  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.05), 0 0 20px rgba(212, 175, 55, 0.1);
+  background: rgba(25,25,25,0.8);
+  border-color: rgba(212, 175, 55, 0.6); /* Gold */
+  box-shadow: 0 0 0 4px rgba(128, 0, 32, 0.15), 0 0 20px rgba(212, 175, 55, 0.15);
 }
 
 /* Hover Effects */
@@ -174,7 +190,13 @@
 
 /* Gradient Text */
 .text-gradient {
-  background: linear-gradient(135deg, #FFDF73 0%, #D4AF37 50%, #996515 100%);
+  background: linear-gradient(135deg, #FFDF73 0%, #D4AF37 40%, #B5A642 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.text-gradient-burgundy {
+  background: linear-gradient(135deg, #A8203E 0%, #800020 50%, #4A0404 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -189,8 +211,8 @@
 /* Gradient Border Cards */
 .gradient-border {
   position: relative;
-  background: linear-gradient(135deg, rgba(20,20,20,0.9) 0%, rgba(5,5,5,0.95) 100%);
-  backdrop-filter: blur(20px);
+  background: linear-gradient(135deg, rgba(30,30,30,0.85) 0%, rgba(10,10,10,0.95) 100%);
+  backdrop-filter: blur(24px);
 }
 .gradient-border::before {
   content: '';
@@ -198,7 +220,7 @@
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.4) 0%, rgba(212, 175, 55, 0.05) 50%, rgba(212, 175, 55, 0.2) 100%);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.5) 0%, rgba(128, 0, 32, 0.3) 50%, rgba(212, 175, 55, 0.2) 100%);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
   -webkit-mask-composite: xor;
@@ -209,17 +231,17 @@
 .btn-glow {
   position: relative;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25);
-  transition: all 0.5s ease;
+  box-shadow: 0 10px 30px rgba(128, 0, 32, 0.3), 0 0 15px rgba(212, 175, 55, 0.15);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .btn-glow:hover {
-  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);
-  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(128, 0, 32, 0.5), 0 0 30px rgba(212, 175, 55, 0.3);
+  transform: translateY(-3px) scale(1.01);
 }
 
 /* Dot Grid Background */
 .dot-grid {
-  background-image: radial-gradient(rgba(212, 175, 55, 0.05) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(212, 175, 55, 0.06) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
