@@ -98,10 +98,10 @@ export default function Home() {
             <Button
               type="submit"
               disabled={isLoading}
-              className="w-full relative group overflow-hidden bg-gradient-to-r from-[#800020] via-[#A8203E] to-[#D4AF37] text-white hover:from-[#A8203E] hover:to-[#FFDF73] hover:text-[#050505] border-none rounded-xl py-6 font-extrabold text-[13px] uppercase tracking-[0.25em] transition-all duration-500 shadow-[0_0_20px_rgba(128,0,32,0.3)] hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] hover:-translate-y-0.5 flex items-center justify-center gap-2"
+              className="w-full relative group overflow-hidden bg-gradient-to-r from-[#D4AF37] via-[#FFDF73] to-[#B5A642] text-[#0A0A0A] hover:brightness-110 border-none rounded-xl py-6 font-extrabold text-[13px] uppercase tracking-[0.25em] transition-all duration-500 shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_40px_rgba(212,175,55,0.5)] hover:-translate-y-1 flex items-center justify-center gap-2"
               suppressHydrationWarning
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:animate-shimmer" />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent -translate-x-full group-hover:animate-shimmer" />
               <span className="relative z-10 flex items-center gap-2">
                 {isLoading ? 'Mencari...' : 'Cek Sekarang'}
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
