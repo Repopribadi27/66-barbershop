@@ -5,7 +5,7 @@ import { getMembers, getLogs } from './actions';
 
 export default async function AdminPage() {
   const cookieStore = await cookies();
-  const isAdmin = cookieStore.get('admin_token')?.value === process.env.ADMIN_PASSWORD;
+  const isAdmin = process.env.ADMIN_PASSWORD && cookieStore.get('admin_token')?.value === process.env.ADMIN_PASSWORD;
 
   if (!isAdmin) {
     return <LoginForm />;
